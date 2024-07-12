@@ -1,6 +1,10 @@
 .food-card {
     cursor: pointer;
     flex-basis: 25%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    transition-duration: 0.5s;
 }
 
 .food-card-image {
@@ -21,4 +25,9 @@
 
 .food-card:hover {
     transform: scale(1.1);
+}
+
+@keyframes scale-up {
+    50% {
+    }
 }
