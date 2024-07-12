@@ -1,0 +1,23 @@
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 3px solid rgb(141, 136, 136);
+}
+.navBarButtons{
+    display: flex;
+    width: 450px;
+    justify-content: space-between;
+    padding-top: 1px;
+    padding-bottom: 1px;
+
+}
+.logoSpan{
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: large;
+    font-weight: bold;
+}
+

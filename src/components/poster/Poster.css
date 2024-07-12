@@ -1,0 +1,39 @@
+.poster {
+    background-image: url('src/assets/images/posterImage.webp');
+    background-size: cover;
+    background-position: center;
+    width: 800px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 1em;
+}
+
+.buttons {
+    display: flex;
+    height: 50px;
+    width: 800px;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+    font-style: oblique;
+}
+
+.poster-buttons {
+    background-color: #f44336;
+    border-radius: 1em;
+    margin-left: 10px;
+}
+
+.main-button {
+    color: white;
+}
