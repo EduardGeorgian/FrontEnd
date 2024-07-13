@@ -54,6 +54,27 @@ let items: FoodCardProps[] = [
     },
 ];
 
+let items2: FoodCardProps[] = [
+    {
+        FoodName: 'Cucumber Sandwiches',
+        FoodImageUrl: 'src/assets/images/Starters/Cucumber-Sandwiches.jpg',
+        FoodImageAlt: 'Cucumber Sandwiches',
+        FoodPrice: 10,
+    },
+    {
+        FoodName: 'Lamb Skewers',
+        FoodImageUrl: 'src/assets/images/Starters/Honey-Mint-Lamb-Skewers.jpg',
+        FoodImageAlt: 'Lamb Skewers',
+        FoodPrice: 15,
+    },
+    {
+        FoodName: 'Olive and Cheese',
+        FoodImageUrl: 'src/assets/images/Starters/Marinated-Olive&Cheese-Ring.jpg',
+        FoodImageAlt: 'Olive and Cheese',
+        FoodPrice: 10,
+    },
+];
+
 export default function landingPage() {
     return (
         <div className='landingPage'>
@@ -70,6 +91,8 @@ export default function landingPage() {
             <br></br>
             <h2 className='carousel-title1'>Fish Dishes</h2>
             <FoodCarousel items={items} />
+            <h2 className='carousel-title2'>Starters</h2>
+            <FoodCarousel items={items2} />
         </div>
     );
 }
