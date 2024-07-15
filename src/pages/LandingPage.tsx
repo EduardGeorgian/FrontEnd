@@ -9,6 +9,9 @@ import { FoodCardProps } from '../components/food-card/FoodCard';
 import FoodCarousel from '../components/food-carousel/FoodCarousel';
 
 import ScrollComponent from '../components/scroll-button/ScrollButton';
+
+import FooterBanner from '../components/footer-banner/FooterBanner';
+
 let items: FoodCardProps[] = [
     {
         FoodName: 'Barbeque Fish',
@@ -93,6 +96,9 @@ export default function landingPage() {
             <FoodCarousel items={items} />
             <h2 className='carousel-title2'>Starters</h2>
             <FoodCarousel items={items2} />
+            <br></br>
+            <br></br>
+            <FooterBanner />
         </div>
     );
 }

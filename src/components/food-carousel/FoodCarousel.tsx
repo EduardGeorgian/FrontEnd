@@ -12,7 +12,6 @@ export default function FoodCarousel({ items }: FoodCarouselProps) {
     const carouselRef = useRef<HTMLDivElement>(null);
     const handleScroll = (event) => {
         event.preventDefault();
-
         carouselRef.current!.scrollBy({
             left: event.deltaY < 0 ? -180 : 180,
             behavior: 'smooth',
