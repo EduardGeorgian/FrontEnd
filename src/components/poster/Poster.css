@@ -34,6 +34,14 @@
     margin-left: 10px;
 }
 
+.poster-buttons:hover {
+    background-color: #020202;
+}
+
 .main-button {
+    color: white;
+}
+
+.second-button {
     color: white;
 }

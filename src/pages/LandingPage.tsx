@@ -12,6 +12,10 @@ import ScrollComponent from '../components/scroll-button/ScrollButton';
 
 import FooterBanner from '../components/footer-banner/FooterBanner';
 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import ProductPage from '../pages/ProductPage';
+
 let items: FoodCardProps[] = [
     {
         FoodName: 'Barbeque Fish',

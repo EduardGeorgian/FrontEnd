@@ -9,7 +9,7 @@
 }
 
 .button:hover {
-    background-color: gray;
+    background-color: rgb(211, 211, 211);
     cursor: pointer;
     border-radius: 1em;
 }

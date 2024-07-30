@@ -31,3 +31,8 @@
     50% {
     }
 }
+
+.food-card-link {
+    color: black;
+    text-decoration: none;
+}

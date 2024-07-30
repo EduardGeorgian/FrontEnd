@@ -11,7 +11,7 @@ export default function Poster({ bigMessage, smallMessage, button1Label, button2
             </span>
             <span className='buttons'>
                 <Button className='poster-buttons main-button'>Order Delivery</Button>
-                <Button className='poster-buttons'>Reserve a Table</Button>
+                <Button className='poster-buttons second-button'>Reserve a Table</Button>
             </span>
         </div>
     );
