@@ -4,6 +4,7 @@ import React from 'react';
 import LandingPage from './pages/LandingPage';
 import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
 import ProductPage from './pages/ProductPage';
+import OrderList from './components/order-list/OrderList';
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                     }
                 />
                 <Route path='/product/:foodName' element={<ProductPage />} />
+                <Route path='/orders' Component={OrderList} />
             </Routes>
         </BrowserRouter>
     );

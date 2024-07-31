@@ -23,3 +23,9 @@
     font-size: large;
     font-weight: bold;
 }
+
+.cart-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

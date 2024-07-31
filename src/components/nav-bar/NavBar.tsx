@@ -3,8 +3,13 @@ import React from 'react';
 import GeneralButton from '../button/Button.tsx';
 import './NavBar.css';
 import OrderCartIcon from '../order-cart-icon/OrderCartIcon.tsx';
+import { BrowserRouter as Router, Route, useNavigate } from 'react-router-dom';
 
 export default function NavBar() {
+    const navigate = useNavigate();
+    const handleOrderCartClick = () => {
+        navigate('/orders');
+    };
     return (
         <section className='navBar'>
             <span className='logoSpan'>
@@ -13,7 +18,9 @@ export default function NavBar() {
             </span>
 
             <section className='navBarButtons'>
-                <OrderCartIcon></OrderCartIcon>
+                <div onClick={handleOrderCartClick} className='cart-wrapper'>
+                    <OrderCartIcon />
+                </div>
                 <GeneralButton>Menu</GeneralButton>
                 <GeneralButton>Reservations</GeneralButton>
                 <GeneralButton>Private Dining</GeneralButton>

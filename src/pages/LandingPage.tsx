@@ -18,6 +18,11 @@ import ProductPage from '../pages/ProductPage';
 
 import OrderCartIcon from '../components/order-cart-icon/OrderCartIcon';
 
+import OrderList from '../components/order-list/OrderList';
+
+import { useState } from 'react';
+
+import ClearCartButton from '../components/clear-cart-from-local-storage/ClearCartButton';
 let items: FoodCardProps[] = [
     {
         FoodName: 'Barbeque Fish',
@@ -105,6 +110,7 @@ export default function landingPage() {
             <br></br>
             <br></br>
             <FooterBanner />
+            <ClearCartButton />
         </div>
     );
 }

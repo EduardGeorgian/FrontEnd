@@ -16,13 +16,16 @@ export const decrementOrderCount = (): number => {
     return newCount;
 };
 
+export const addOrder = (orderName: string): void => {
+    const orders = getOrders();
+    orders.push(orderName);
+    localStorage.setItem('orders', JSON.stringify(orders));
+};
 export const getOrders = (): string[] => {
     const orders = localStorage.getItem('orders');
     return orders ? JSON.parse(orders) : [];
 };
 
-export const addOrder = (orderName: string): void => {
-    const orders = getOrders();
-    orders.push(orderName);
+export const saveOrdersToLocalStorage = (orders: string[]) => {
     localStorage.setItem('orders', JSON.stringify(orders));
 };
