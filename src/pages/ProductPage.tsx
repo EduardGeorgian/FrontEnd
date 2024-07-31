@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { createContext, useState, useContext, ReactNode } from 'react';
 import { useParams } from 'react-router-dom';
 import { FoodCardProps } from '../components/food-card/FoodCard';
 
 import OrderButton from '../components/button/Button';
 import '../pages/ProductPage.css';
+import { OrderCartIconProps } from '../components/order-cart-icon/OrderCartIcon';
+import { counter } from '@fortawesome/fontawesome-svg-core';
+import OrderCartIcon from '../components/order-cart-icon/OrderCartIcon';
+import { addOrder, incrementOrderCount } from '../components/orderCounter';
 // Mock product data (replace with actual data source if available)
 const products: FoodCardProps[] = [
     {
@@ -76,13 +80,21 @@ export default function ProductPage() {
         return <div>Product not found</div>;
     }
 
+    const handleOrderClick = () => {
+        const newCount = incrementOrderCount();
+        const orderArray = addOrder(product.FoodName);
+        console.log(`new order added: ${product.FoodName} and order count is now :${newCount}`);
+    };
     console.log(foodName, product.FoodImageUrl);
+
     return (
         <div className='product-page'>
             <img className='product-page-image' src={product.FoodImageUrl} alt={product.FoodImageAlt} />
             <h1>{product.FoodName}</h1>
             <p>Price: ${product.FoodPrice}</p>
-            <OrderButton className='order-button'>Order Now</OrderButton>
+            <button className='order-button' onClick={handleOrderClick}>
+                Order Now
+            </button>
         </div>
     );
 }

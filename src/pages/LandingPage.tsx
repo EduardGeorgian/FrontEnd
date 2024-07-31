@@ -16,6 +16,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import ProductPage from '../pages/ProductPage';
 
+import OrderCartIcon from '../components/order-cart-icon/OrderCartIcon';
+
 let items: FoodCardProps[] = [
     {
         FoodName: 'Barbeque Fish',
