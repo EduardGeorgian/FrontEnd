@@ -7,8 +7,10 @@ import '../pages/ProductPage.css';
 import { OrderCartIconProps } from '../components/order-cart-icon/OrderCartIcon';
 import { counter } from '@fortawesome/fontawesome-svg-core';
 import OrderCartIcon from '../components/order-cart-icon/OrderCartIcon';
-import { addOrder, incrementOrderCount } from '../components/orderCounter';
+import { addOrder, getOrders, incrementOrderCount, changeFlag, addPrice, getPrices } from '../components/orderCounter';
 // Mock product data (replace with actual data source if available)
+import OrderList from '../components/order-list/OrderList';
+import { useOrderContext } from '../OrderContext';
 const products: FoodCardProps[] = [
     {
         FoodName: 'Barbeque Fish',
@@ -75,26 +77,36 @@ const products: FoodCardProps[] = [
 export default function ProductPage() {
     const { foodName } = useParams<{ foodName: string }>();
     const product = products.find((p) => p.FoodName === foodName);
+    const { addOrder } = useOrderContext();
+    const [orders, setOrders] = useState<string[]>(getOrders());
 
     if (!product) {
         return <div>Product not found</div>;
     }
 
     const handleOrderClick = () => {
-        const newCount = incrementOrderCount();
+        /*const newCount = incrementOrderCount();
         const orderArray = addOrder(product.FoodName);
+        addPrice(product.FoodPrice.toString());
+        setOrders(getOrders());
         console.log(`new order added: ${product.FoodName} and order count is now :${newCount}`);
+        */
+        incrementOrderCount();
+        addOrder(product.FoodName, product.FoodPrice.toString());
     };
+
     console.log(foodName, product.FoodImageUrl);
 
     return (
         <div className='product-page'>
             <img className='product-page-image' src={product.FoodImageUrl} alt={product.FoodImageAlt} />
+
             <h1>{product.FoodName}</h1>
             <p>Price: ${product.FoodPrice}</p>
             <button className='order-button' onClick={handleOrderClick}>
                 Order Now
             </button>
+            <OrderList />
         </div>
     );
 }

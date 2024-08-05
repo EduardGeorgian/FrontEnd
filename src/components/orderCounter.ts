@@ -1,3 +1,5 @@
+import { faBullseye } from '@fortawesome/free-solid-svg-icons';
+
 // orderCounter.ts
 export const getOrderCount = (): number => {
     const orderCount = localStorage.getItem('orderCount');
@@ -28,4 +30,24 @@ export const getOrders = (): string[] => {
 
 export const saveOrdersToLocalStorage = (orders: string[]) => {
     localStorage.setItem('orders', JSON.stringify(orders));
+};
+
+export const changeFlag = (flag: boolean) => {
+    if (flag === true) flag = false;
+    else flag = true;
+};
+
+export const getPrices = (): string[] => {
+    const prices = localStorage.getItem('prices');
+    return prices ? JSON.parse(prices) : [];
+};
+
+export const savePricesToLocalStorage = (prices: string[]) => {
+    localStorage.setItem('prices', JSON.stringify(prices));
+};
+
+export const addPrice = (price: string): void => {
+    const prices = getPrices();
+    prices.push(price);
+    localStorage.setItem('prices', JSON.stringify(prices));
 };

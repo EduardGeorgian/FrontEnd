@@ -26,3 +26,8 @@
 .order-button:hover {
     background-color: rgb(165, 165, 155);
 }
+
+.img-order-list-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+}
