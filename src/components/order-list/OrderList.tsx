@@ -5,27 +5,8 @@ import { decrementOrderCount } from '../orderCounter';
 import { useOrderContext } from '../../OrderContext';
 
 const OrderList = () => {
-    /*const [orders, setOrders] = useState<string[]>([]);
-    const [prices, setPrices] = useState<string[]>([]);
-
-    useEffect(() => {
-        setOrders(getOrders());
-    }, []);
-
-    useEffect(() => {
-        setPrices(getPrices());
-    }, []);
-
-    const handleDeleteOrder = (indexToRemove: number) => {
-        const updatedOrders = orders.filter((_, index) => index !== indexToRemove);
-        const updatedPrices = prices.filter((_, index) => index !== indexToRemove);
-        setOrders(updatedOrders);
-        saveOrdersToLocalStorage(updatedOrders);
-        setPrices(updatedPrices);
-        savePricesToLocalStorage(updatedPrices);
-    };
-    */
     const { orders, prices, removeOrder } = useOrderContext();
+    const totalPrice = prices.reduce((accumulator, currentPrice) => accumulator + currentPrice, 0);
     return (
         <div className='order-list-wrapper'>
             <h1>Current Orders</h1>
@@ -41,7 +22,6 @@ const OrderList = () => {
                                 className='x-button'
                                 onClick={() => {
                                     removeOrder(index);
-                                    decrementOrderCount();
                                 }}
                             >
                                 X
@@ -50,6 +30,10 @@ const OrderList = () => {
                     ))}
                 </ul>
             )}
+
+            <section>
+                <b>Total: ${totalPrice.toFixed(2)} </b>
+            </section>
         </div>
     );
 };

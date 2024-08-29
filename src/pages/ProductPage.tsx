@@ -78,29 +78,18 @@ export default function ProductPage() {
     const { foodName } = useParams<{ foodName: string }>();
     const product = products.find((p) => p.FoodName === foodName);
     const { addOrder } = useOrderContext();
-    const [orders, setOrders] = useState<string[]>(getOrders());
 
     if (!product) {
         return <div>Product not found</div>;
     }
 
     const handleOrderClick = () => {
-        /*const newCount = incrementOrderCount();
-        const orderArray = addOrder(product.FoodName);
-        addPrice(product.FoodPrice.toString());
-        setOrders(getOrders());
-        console.log(`new order added: ${product.FoodName} and order count is now :${newCount}`);
-        */
-        incrementOrderCount();
-        addOrder(product.FoodName, product.FoodPrice.toString());
+        addOrder(product.FoodName, product.FoodPrice);
     };
-
-    console.log(foodName, product.FoodImageUrl);
 
     return (
         <div className='product-page'>
             <img className='product-page-image' src={product.FoodImageUrl} alt={product.FoodImageAlt} />
-
             <h1>{product.FoodName}</h1>
             <p>Price: ${product.FoodPrice}</p>
             <button className='order-button' onClick={handleOrderClick}>

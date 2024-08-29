@@ -1,9 +1,10 @@
 import { faBullseye } from '@fortawesome/free-solid-svg-icons';
+import OrderList from './order-list/OrderList';
 
 // orderCounter.ts
 export const getOrderCount = (): number => {
-    const orderCount = localStorage.getItem('orderCount');
-    return orderCount ? parseInt(orderCount, 10) : 0;
+    const orders = getOrders();
+    return orders.length;
 };
 
 export const incrementOrderCount = (): number => {
@@ -37,7 +38,7 @@ export const changeFlag = (flag: boolean) => {
     else flag = true;
 };
 
-export const getPrices = (): string[] => {
+export const getPrices = (): number[] => {
     const prices = localStorage.getItem('prices');
     return prices ? JSON.parse(prices) : [];
 };
@@ -46,7 +47,7 @@ export const savePricesToLocalStorage = (prices: string[]) => {
     localStorage.setItem('prices', JSON.stringify(prices));
 };
 
-export const addPrice = (price: string): void => {
+export const addPrice = (price: number): void => {
     const prices = getPrices();
     prices.push(price);
     localStorage.setItem('prices', JSON.stringify(prices));
